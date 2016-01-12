@@ -1,0 +1,6 @@
+## Eclipse Project Things ##
+/.settings/
+/bin/
+/libs/
+.classpath
+.project
