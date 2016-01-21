@@ -1,0 +1,23 @@
+package io.nub.core.file.text;
+
+import io.nub.core.Java2;
+import io.nub.core.file.File2;
+import io.nub.core.lang.String2;
+
+public class TextFile extends File2
+{
+	private static final long serialVersionUID = 7129237661845686530L;
+
+	public TextFile(String path) {
+		super(path);
+	}
+	
+	public TextFile(String2 path) {
+		super(path);
+	}
+	
+	public String2 getValue()
+	{
+		return Java2.getStringContentC(this);
+	}
+}
