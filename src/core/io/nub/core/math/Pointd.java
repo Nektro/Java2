@@ -19,4 +19,11 @@ public class Pointd
 	public Pointd(double x, double y) { this(x, y, 0); }
 	public Pointd(double x) { this(x, 0); }
 	public Pointd() { this(0); }
+	
+	@Override
+	public String toString() {
+		return "(" + x + ", " + y + ", " + z + ")";
+	}
+	
+	
 }

@@ -2,6 +2,9 @@ package io.nub.core.extras;
 
 import io.nub.core.util.Function;
 
+/**
+ * @author Nektro
+ */
 public class Looper
 {
 	private final Loop loop;

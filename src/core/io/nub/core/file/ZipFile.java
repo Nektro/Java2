@@ -7,6 +7,9 @@ import java.util.zip.ZipOutputStream;
 
 import io.nub.core.lang.String2;
 
+/**
+ * @author Nektro
+ */
 public class ZipFile extends File2
 {
 	private static final long serialVersionUID = -448551384141140776L;

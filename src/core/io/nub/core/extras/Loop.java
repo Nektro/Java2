@@ -1,5 +1,8 @@
 package io.nub.core.extras;
 
+/**
+ * @author Nektro
+ */
 public class Loop
 {
 	private int value;

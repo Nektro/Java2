@@ -8,6 +8,9 @@ import io.nub.core.i.ITable;
 import io.nub.core.lang.String2;
 import io.nub.core.util.ArrayString;
 
+/**
+ * @author Nektro
+ */
 public class CsvFile extends TextFile implements ITable, Iterable<String>
 {
 	private static final long serialVersionUID = 1067439784131596081L;

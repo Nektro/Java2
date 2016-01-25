@@ -3,7 +3,6 @@ package io.nub.core.util;
 import java.util.Arrays;
 
 import io.nub.core.lang.String2;
-import io.nub.core.math.Pointd;
 
 /**
  * A Helper class to help with the many endeavors of math. Many of the functions located here are
@@ -209,7 +208,6 @@ public final class Math2
 	public static double toRadians(double degs) { return degs * PI / 180; }
 	public static double toDegrees(double rads) { return rads * 180 / PI; }
 	public static double distance(double x1, double y1, double x2, double y2) { return sqrt(pow(x2 - x1, 2) + pow(y2 - y1,2)); }
-	public static double distance(Pointd a, Pointd b) { return distance(a.x, a.y, b.x, b.y); }
 	
 	public static double sin(double rad) { return Math.sin(rad); } // return unitPoint(rad).y; }
 	public static double cos(double rad) { return Math.cos(rad); } // return unitPoint(rad).x; }
@@ -217,28 +215,6 @@ public final class Math2
 	public static double csc(double rad) { return 1 / sin(rad); }
 	public static double sec(double rad) { return 1 / cos(rad); }
 	public static double cot(double rad) { return 1 / tan(rad); }
-	
-	public static Pointd unitPoint(double rad)
-	{
-		// cordic algorithm
-		// http://en.wikipedia.org/wiki/CORDIC
-		// TODO
-		Pointd v0 = new Pointd(1,0);
-		v0.x = trigR(v0.x);
-		v0.y = trigR(v0.y);
-		return v0;
-	}
-	
-	private static double trigR(double i)
-	{
-		// TODO
-		return trigK(i);
-	}
-	
-	private static double trigK(double i)
-	{
-		return 1 / sqrt(1 + pow(2, -2 * i));
-	}
 	
 	public static final String DIGITS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	

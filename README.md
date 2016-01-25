@@ -1,4 +1,4 @@
-# Java2
+# Nub for Java
 A Java library that makes doing complex things easy.
 
 Version 0.0.1

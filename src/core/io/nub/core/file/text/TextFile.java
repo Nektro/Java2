@@ -4,6 +4,11 @@ import io.nub.core.Java2;
 import io.nub.core.file.File2;
 import io.nub.core.lang.String2;
 
+/**
+ * A base class for handlers of a file with the MIME type of text/*
+ * 
+ * @author Nektro
+ */
 public class TextFile extends File2
 {
 	private static final long serialVersionUID = 7129237661845686530L;

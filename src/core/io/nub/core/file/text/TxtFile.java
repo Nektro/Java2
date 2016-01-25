@@ -7,6 +7,9 @@ import java.io.IOException;
 import io.nub.core.lang.String2;
 import io.nub.core.util.Logger2;
 
+/**
+ * @author Nektro
+ */
 public class TxtFile extends TextFile
 {
 	private static final long serialVersionUID = 1318103255239757321L;

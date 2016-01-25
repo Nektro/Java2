@@ -3,6 +3,9 @@ package io.nub.core.math.shapes;
 import io.nub.core.math.Pointd;
 import io.nub.core.util.Math2;
 
+/**
+ * @author Nektro
+ */
 public class Circle
 {
 	private Pointd center;
