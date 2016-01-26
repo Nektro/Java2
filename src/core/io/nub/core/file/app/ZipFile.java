@@ -1,13 +1,16 @@
-package io.nub.core.file;
+package io.nub.core.file.app;
 
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+import io.nub.core.file.File2;
 import io.nub.core.lang.String2;
 
 /**
+ * A handler class for files with the extension .zip (or the application/zip MIME type)
+ * 
  * @author Nektro
  */
 public class ZipFile extends File2
@@ -45,7 +48,7 @@ public class ZipFile extends File2
 		zos.close();
 	}
 	
-	public String getFile(String intpath)
+	public byte[] getFile(String intpath)
 	{
 		try {
 			String s = "";
@@ -63,7 +66,7 @@ public class ZipFile extends File2
 				}
 			}
 			in.close();
-			return s;
+			return s.getBytes();
 		}
 		catch (IOException e) {
 			return null;
