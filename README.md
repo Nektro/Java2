@@ -3,4 +3,5 @@ A Java library that makes doing complex things easy.
 
 Version 0.0.1
 
-Use at own risk in current state!
+Not broken, but not tested. Made on my own time for my own projects
+and figured I would share it with the world.
