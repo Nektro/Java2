@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import io.nub.core.Java2;
+import io.nub.core.Nub;
 import io.nub.core.lang.String2;
 import io.nub.core.util.Logger2;
 
@@ -58,7 +58,7 @@ public class JFrame2 extends JFrame
 	 */
 	public JFrame2 setIconImage(String2 abspath)
 	{
-		this.setIconImage(Java2.newImage(abspath));
+		this.setIconImage(Nub.newImage(abspath));
 		return this;
 	}
 	

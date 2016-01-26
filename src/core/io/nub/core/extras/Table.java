@@ -3,7 +3,7 @@ package io.nub.core.extras;
 import java.io.PrintStream;
 import java.util.List;
 
-import io.nub.core.Java2;
+import io.nub.core.Nub;
 
 /**
  * A new util object that use may end up using a lot more than you think. Table is a 2-Dimensional
@@ -17,7 +17,7 @@ public class Table
 	
 	public Table()
 	{
-		this.value = Java2.newList();
+		this.value = Nub.newList();
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class Table
 	 */
 	public Table addRow(Object... items)
 	{
-		List<Object> list = Java2.newList(Java2.newList(), items);
+		List<Object> list = Nub.newList(Nub.newList(), items);
 		this.value.add(list);
 		return this;
 	}

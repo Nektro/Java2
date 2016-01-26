@@ -2,10 +2,9 @@ package io.nub.core.file.text;
 
 import java.util.Iterator;
 
-import io.nub.core.Java2;
+import io.nub.core.Nub;
 import io.nub.core.file.File2;
 import io.nub.core.i.ITable;
-import io.nub.core.lang.String2;
 import io.nub.core.util.ArrayString;
 
 /**
@@ -22,7 +21,7 @@ public class CsvFile extends TextFile implements ITable, Iterable<String>
 		if (!this.extension.equals("csv")) {
 			// throw exception
 		}
-		this.value = new ArrayString(Java2.getStringContentC(new File2(path)).split(new String2("\n"))).split(",");
+		this.value = new ArrayString(Nub.getStringContentC(new File2(path)).split(("\n"))).split(",");
 	}
 	
 	@Override

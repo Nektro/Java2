@@ -1,6 +1,6 @@
 package io.nub.core.file.text;
 
-import io.nub.core.Java2;
+import io.nub.core.Nub;
 import io.nub.core.file.File2;
 import io.nub.core.lang.String2;
 
@@ -21,8 +21,8 @@ public class TextFile extends File2
 		super(path);
 	}
 	
-	public String2 getValue()
+	public String getValue()
 	{
-		return Java2.getStringContentC(this);
+		return Nub.getStringContentC(this);
 	}
 }
