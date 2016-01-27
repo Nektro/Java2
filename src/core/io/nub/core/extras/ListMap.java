@@ -16,8 +16,6 @@ import io.nub.core.util.MapEntry;
  *
  * @param <K>
  * @param <V>
- * 
- * @see com.zylonik.java2.util.ArrayAssoc
  */
 public class ListMap<K,V> implements Map<K,V>
 {
