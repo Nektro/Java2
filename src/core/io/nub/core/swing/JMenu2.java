@@ -27,4 +27,10 @@ public class JMenu2 extends JMenu
 		super.add(c);
 		return this;
 	}
+	
+	public JMenu2 addSep()
+	{
+		this.addSeparator();
+		return this;
+	}
 }
