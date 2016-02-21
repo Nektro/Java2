@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -203,6 +204,6 @@ public class Nub
 	 * @return
 	 */
 	public static String readAllContent(InputStream is) {
-		return new ArrayString(new BufferedReader(new InputStreamReader(is)).lines().toArray()).join("\n");
+		return new ArrayString(new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8"))).lines().toArray()).join("\n");
 	}
 }
