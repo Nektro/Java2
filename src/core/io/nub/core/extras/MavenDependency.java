@@ -23,8 +23,8 @@ public class MavenDependency
 		private MavenDependencyFile(String s) { this.ext = s; }
 	}
 	
-	public static final String REPO_MAVEN_CENTRAL_REPO1  = "https://repo1.maven.org/maven2/";
-	public static final String REPO_MAVEN_CENTRAL_CENTAL = "http://central.maven.org/maven2/";
+	public static final String REPO_MAVEN_CENTRAL_REPO1   = "https://repo1.maven.org/maven2/";
+	public static final String REPO_MAVEN_CENTRAL_CENTRAL = "http://central.maven.org/maven2/";
 	
 	private String url;
 	private String group;

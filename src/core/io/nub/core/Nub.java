@@ -4,8 +4,9 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,7 +15,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
@@ -151,10 +151,11 @@ public class Nub
 	 * Reads the entire contents of a given text file and returns it as a {@code String2}.
 	 * @param file the text file
 	 * @return the text contents
-	 * @throws FileNotFoundException
+	 * @throws IOException 
 	 */
-	public static String getStringContent(File2 file) throws FileNotFoundException 
+	public static String getStringContent(File file) throws IOException 
 	{
+		/*
 		Scanner scan = new Scanner(new FileInputStream(file));
 		String s = "";
 		while (scan.hasNextLine())
@@ -164,6 +165,13 @@ public class Nub
 		}
 		scan.close();
 		return (s);
+		*/
+		String s = "";
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		while (br.ready())
+			s += br.readLine() + "\n";
+		br.close();
+		return s;
 	}
 	
 	/**
@@ -172,12 +180,15 @@ public class Nub
 	 * @param file the text file
 	 * @return the text contents
 	 */
-	public static String getStringContentC(File2 file)
+	public static String getStringContentC(File file)
 	{
 		try {
 			return Nub.getStringContent(file);
 		}
 		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
