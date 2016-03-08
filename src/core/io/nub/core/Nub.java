@@ -155,17 +155,6 @@ public class Nub
 	 */
 	public static String getStringContent(File file) throws IOException 
 	{
-		/*
-		Scanner scan = new Scanner(new FileInputStream(file));
-		String s = "";
-		while (scan.hasNextLine())
-		{
-			s += scan.nextLine();
-			if (scan.hasNextLine()) { s += "\n"; }
-		}
-		scan.close();
-		return (s);
-		*/
 		String s = "";
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		while (br.ready())
@@ -192,6 +181,24 @@ public class Nub
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public static int getFileLines(File file)
+	{
+		try {
+			int c = 0;
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			while (br.ready()) {
+				br.readLine();
+				c += 1;
+			}
+			br.close();
+			return c;
+		}
+		catch (IOException e) {
+			Logger2.getLogger().error(e);
+			return -1;
+		}
 	}
 	
 	/**
