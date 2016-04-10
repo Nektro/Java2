@@ -17,8 +17,8 @@ public final class Math2
 {
 	private Math2() {}
 	
-	public static final double PI = 3.141592653589793;
-	public static final double E  = 2.718281828459045;
+	public static final double PI = Math.PI;
+	public static final double E  = Math.E;
 	
 	/**
 	 * Solve the problem based on the parameters given. If c is not an operator returns -1.
@@ -209,7 +209,14 @@ public final class Math2
 	public static double toDegrees(double rads) { return rads * 180 / PI; }
 	public static double distance(double x1, double y1, double x2, double y2) { return sqrt(pow(x2 - x1, 2) + pow(y2 - y1,2)); }
 	
-	public static double sin(double rad) { return Math.sin(rad); } // return unitPoint(rad).y; }
+	public static double sin(double rad)
+	{
+		double t = 0;
+		for (int i = 1; i < 18; i++)
+			t += (pow(-1, i - 1) * (pow(rad, 2*i - 1) / (double)factorial(2*i - 1)));
+		return t;
+	}
+	
 	public static double cos(double rad) { return Math.cos(rad); } // return unitPoint(rad).x; }
 	public static double tan(double rad) { return sin(rad) / cos(rad); }
 	public static double csc(double rad) { return 1 / sin(rad); }
