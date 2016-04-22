@@ -34,10 +34,17 @@ public class Arrays2
 		return a;
 	}
 
-	public static Character[] toCharacterArray(char[] charArray) {
-		Character[] ca = new Character[charArray.length];
+	public static Character[] valueOf(char[] arr) {
+		Character[] ca = new Character[arr.length];
 		for (int i = 0; i < ca.length; i++)
-			ca[i] = charArray[i];
+			ca[i] = arr[i];
+		return ca;
+	}
+	
+	public static Integer[] valueOf(int[] arr) {
+		Integer[] ca = new Integer[arr.length];
+		for (int i = 0; i < ca.length; i++)
+			ca[i] = arr[i];
 		return ca;
 	}
 }
