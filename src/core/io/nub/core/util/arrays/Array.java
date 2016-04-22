@@ -1,4 +1,4 @@
-package io.nub.core.util;
+package io.nub.core.util.arrays;
 
 import java.util.ArrayList;
 
@@ -11,19 +11,22 @@ public class Array<T> extends ArrayList<T>
 {
 	private static final long serialVersionUID = -6223130567146190736L;
 	
-	public Array() {
+	public Array()
+	{
 		super();
 	}
 	
-	public Array(int length) {
+	public Array(int length)
+	{
 		super(length);
 	}
 	
-	public Array(T[] array)
+	@SuppressWarnings("unchecked")
+	public Array(T... array)
 	{
 		super();
-		for (T e : array)
-			this.add(e);
+		for (T o : array)
+			this.add(o);
 	}
 	
 	
