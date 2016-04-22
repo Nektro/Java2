@@ -5,7 +5,7 @@ import java.util.Iterator;
 import io.nub.core.Nub;
 import io.nub.core.file.File2;
 import io.nub.core.i.ITable;
-import io.nub.core.util.ArrayString;
+import io.nub.core.util.arrays.ArrayString;
 
 /**
  * @author Nektro
@@ -21,7 +21,7 @@ public class CsvFile extends TextFile implements ITable, Iterable<String>
 		if (!this.extension.equals("csv")) {
 			// throw exception
 		}
-		this.value = new ArrayString(Nub.getStringContentC(new File2(path)).split(("\n"))).split(",");
+		this.value = new ArrayString(Nub.getLineContent(new File2(path).getInputStream()).toArray()).split(",");
 	}
 	
 	@Override
