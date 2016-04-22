@@ -21,8 +21,9 @@ public class Looper
 		this.running = true;
 		this.func = f;
 	}
+	
 	public Looper(int min, int max, int startFrame, int rate) {
-		this(min, max, startFrame, rate, new Function(){
+		this(min, max, startFrame, rate, new Function() {
 			@Override
 			public void call() {
 			}
