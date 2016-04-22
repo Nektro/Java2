@@ -20,8 +20,8 @@ import javax.imageio.ImageIO;
 
 import io.nub.core.file.File2;
 import io.nub.core.lang.String2;
-import io.nub.core.util.ArrayString;
 import io.nub.core.util.Logger2;
+import io.nub.core.util.arrays.ArrayString;
 
 /**
  * @author Nektro
@@ -215,6 +215,11 @@ public class Nub
 		return r;
 	}
 	
+	public static List<String> getLineContent(InputStream is)
+	{
+		return new ArrayString(new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8"))).lines().toArray());
+	}
+	
 	/**
 	 * Read all the String content available in this InputStream. 
 	 * 
@@ -222,6 +227,6 @@ public class Nub
 	 * @return
 	 */
 	public static String readAllContent(InputStream is) {
-		return new ArrayString(new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8"))).lines().toArray()).join("\n");
+		return ((ArrayString) getLineContent(is)).join("\n");
 	}
 }
