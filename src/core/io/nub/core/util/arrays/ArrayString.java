@@ -1,4 +1,4 @@
-package io.nub.core.util;
+package io.nub.core.util.arrays;
 
 import java.util.Arrays;
 
@@ -9,22 +9,28 @@ public class ArrayString extends Array<String>
 {
 	private static final long serialVersionUID = -6238867536747515337L;
 	
-	public ArrayString(Array<String> fromArray) {
-		this(fromArray.toArray(new String[fromArray.size()]));
+	public ArrayString()
+	{
+		super();
 	}
 	
-	public ArrayString(String[] fromArray) {
-		super(fromArray);
+	public ArrayString(Array<?> fromArray)
+	{
+		this();
+		for (Object o : fromArray)
+			this.add(o.toString());
 	}
 	
-	public ArrayString(Object[] array) {
+	public ArrayString(Object... array)
+	{
 		for (Object o : array)
-			if (o instanceof String)
-				add((String) o);
+			add(o.toString());
 	}
+	
 	
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return Arrays.toString(toArray());
 	}
 	
@@ -72,5 +78,18 @@ public class ArrayString extends Array<String>
 			res += s + x;
 		res.substring(0, res.length() - x.length());
 		return res;
+	}
+	
+	public String[] toSArray()
+	{
+		String[] res = new String[size()];
+		for (int i = 0; i < res.length; i++)
+			res[i] = this.get(i);
+		return res;
+	}
+	
+	public ArrayString reverseR()
+	{
+		return new ArrayString(this.reverse());
 	}
 }
