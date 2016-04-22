@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 import io.nub.core.SysProps;
 import io.nub.core.lang.String2;
-import io.nub.core.util.ArrayString;
+import io.nub.core.util.arrays.ArrayString;
 
 /**
  * @author Nektro
