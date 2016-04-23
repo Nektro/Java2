@@ -7,9 +7,9 @@ import java.util.ArrayList;
  *
  * @param <T>
  */
-public class Array<T> extends ArrayList<T>
+public class Array<T> extends ArrayList<T> implements Cloneable
 {
-	private static final long serialVersionUID = -6223130567146190736L;
+	private static final long serialVersionUID = -588781360801958621L;
 	
 	public Array()
 	{
@@ -29,6 +29,20 @@ public class Array<T> extends ArrayList<T>
 			this.add(o);
 	}
 	
+	@SuppressWarnings("unchecked")
+	@Override
+	public T[] toArray() {
+		T[] ta = (T[]) new Object[size()];
+		for (int i = 0; i < size(); i++)
+			ta[i] = get(i);
+		return ta;
+	}
+	
+	@Override
+	public Array<T> clone()
+	{
+		return new Array<>(this.toArray());
+	}
 	
 	public boolean addAll(T[] c)
 	{
@@ -58,5 +72,25 @@ public class Array<T> extends ArrayList<T>
 	public void shift()
 	{
 		this.remove(0);
+	}
+	
+	@Override
+	public T set(int index, T element)
+	{
+		int size = size();
+		if (index >= size)
+			for (int i = 0; i < index - size + 1; i++)
+				add(null);
+		return super.set(index, element);
+	}
+	
+	@Override
+	public T get(int index) {
+		try {
+			return super.get(index);
+		}
+		catch (IndexOutOfBoundsException e) {
+			return null;
+		}
 	}
 }
