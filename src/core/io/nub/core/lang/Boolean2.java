@@ -9,8 +9,8 @@ public class Boolean2
 	 * @param s a String
 	 * @return true if s is equal to "true" or "1"
 	 */
-	public static boolean valueOf(String2 s)
+	public static Boolean valueOf(String s)
 	{
-		return s.equals("true") || s.equals("1");
+		return s.equalsIgnoreCase("true") || s.equalsIgnoreCase("1");
 	}
 }
